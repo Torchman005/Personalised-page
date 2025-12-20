@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>穿越了？</title>
+</head>
+
+<link rel="stylesheet" href="../../cssStyle/aboutCss.css">
+<link rel="stylesheet" href="../../cssStyle/general.css">
+
+
+<body>
+    <div class="header">
+        <button id="musicplay" title="点击此处播放神秘小歌">♪</button>
+        <audio id="audio" src="../../othersource/sasakure.UK.flac"></audio>
+        <span class="header_element"><a href="../about.html">回去</a></span>
+
+        <div id="musicname">依旧神秘小歌</div>
+    </div>
+
+    <div style="padding: 40px;"></div>
+    <div class="context">
+        <div class="general_text">
+            <p>你你你你是怎么发现这里的！！！</p>
+            <p>快回去！！</p>
+            <p><img src="../../picture/6468944e1bf854c66e9f5a963ab080ac.gif"></p>
+        </div>
+    </div>
+
+
+    <script>
+        //神秘小歌播放器
+        const musicplay = document.getElementById('musicplay');
+        const audio = document.getElementById('audio');
+        const musicname = document.getElementById('musicname');
+
+        musicplay.addEventListener('click', function () {
+            if (audio.paused) {
+                audio.play();
+                musicname.classList.add('playing');
+                setTimeout(() => {
+                    musicname.textContent = '♫正在播放：フューチャー・イヴ (feat. 初音ミク)--sasakure.UK';
+                    musicname.classList.remove('playing');
+                }, 500);
+            } else {
+                audio.pause();
+                musicname.classList.add('playing');
+                setTimeout(() => {
+                    musicname.textContent = 'sasakure.UK，很神奇吧';
+                    audio.currentTime = 0;
+                    musicname.classList.remove('playing');
+                }, 500);
+            }
+        });
+    </script>
+</body>
+
+</html>

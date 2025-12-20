@@ -1,0 +1,102 @@
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+[id] {
+    scroll-margin-top: 120px;
+    /* 锚点跳转位置修改 */
+}
+
+body {
+    background-image: url(../picture/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+hr {
+    background-color: rgba(135, 185, 255, 0.418);
+    border: none;
+    height: 2px;
+}
+
+/* 顶部导航栏 */
+.header {
+    display: inline-flex;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 40px;
+    border-bottom: 3px solid rgb(135, 185, 255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.header_element {
+    font-size: 18px;
+    color: rgb(135, 185, 255);
+    border-bottom: 3px solid rgb(135, 185, 255);
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    padding: 0 50px;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    transition: padding-top 0.3s ease, padding-bottom 0.3s ease, background 0.2s ease;
+    transform-origin: top center;
+}
+
+.header_element:hover {
+    padding-bottom: 9px;
+    padding-top: 5px;
+    background: rgb(30, 42, 59);
+    border-bottom: 3px solid rgb(135, 185, 255);
+}
+
+#musicplay {
+    border: none;
+    font-size: 20px;
+    color: rgb(135, 185, 255);
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    padding: 0 30px;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    transition: background 0.2s ease, font-size 0.3s ease;
+    transform-origin: top center;
+}
+
+#musicplay:hover {
+    font-size: 30px;
+    background: rgb(30, 42, 59);
+}
+
+#musicname {
+    position: absolute;
+    margin-left: 1000px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: rgb(135, 185, 255);
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    opacity: 1;
+}
+
+#musicname.playing {
+    transform: translateX(100px);
+    opacity: 0;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不对呀不对呀，这又给我干哪来了？QAQ</title>
+
+    <link rel="stylesheet" href="../cssStyle/contextCss.css">
+    <link rel="stylesheet" href="../cssStyle/general.css">
+</head>
+<body>
+    <div class="header">
+        <button id="musicplay" title="哦哦哦哦哦哦哦哦哦我学会怎么放音频了！！！！！！">♪</button>
+        <audio id="audio" src="../othersource/sasakure.UK.flac"></audio>
+        <span class="header_element"><a href="page.html">回到首页</a></span>
+        <div id="musicname">这里是哪里捏@_@a?</div>
+    </div>
+
+    <div style="padding: 40px;"></div>
+    <div class="context">
+        <div class="general_text">
+            <hr>
+            <h1>·—————————·关于网名·—————————·</h1>
+            <div class="context_text">侧栏被我吃辣</div>
+            <p>·———·中文网名：虹雨（主），虹夜</p>
+            <p>·———·英文网名：Rain1bow<del>^v^去哪了？</del></p>
+            <p>中文网名名字里总是带个虹，英文网名随机，想到什么取什么。关于“虹の轴”，目前已经达成四轴体辣，其他两个轴<del class="context_text">（小号）</del>还在开发中（）</p>
+            <p>关于这个网名的意义我是不会告诉你的。</p>
+            <hr>
+            <h1>·—————————·兴趣与能力·—————————·</h1>
+            <p>主要的兴趣有：音乐、写程序、画画、打游戏。</p>
+            <p>音乐方面不细说，稍微会点键盘和电吉他，有乐理基础；画画方面主要为板绘，但是是究极画渣的程度，期待有板绘大蛇能教我画画orz</p>
+            <p>
+                程序方面：语言目前初步掌握学校要求的C语言程度，正在学习并打算深入C#/Java开发，其余方面仅仅是略有了解。<br>
+                事实上，目前我对前端的东西比较感兴趣，正在研究并优化各种有意思的交互效果，
+            </p>
+            <p>游戏方面接触领域极为广泛：</p>
+            <p>包括且不限于：RTS、音游、沙盒、fps、rpg。其中主玩星际2、MC和各种奇奇怪怪的音游。</p>
+            <hr>
+            <h1>·—————————·关于性格·—————————·</h1>
+            <p>
+                乐观，乐观，再乐观ദ്ദി˶>ω<)✧，保持正确的乐观态度处事！非常乐意与人交流，但我话少捏，<span class="context_text">？？？</span>
+                <br>所以我虽然乐观，但我是脱离不了社恐的本质的（雾））
+                <br><img src="../picture/b0215051fe8a5dd01effa0397fee598a.jpg" height="100px" width="100px"><br>
+            </p>
+            <hr>
+            <h1>·—————————·活动区域·—————————·</h1>
+            <p>目前来说，主要活动的区域有：</p>
+            <p>QQ、B站。</p>
+            <br>联系方式：
+            <br>QQ：2457136037。
+            <hr>
+            想不到塞什么了，塞个这个:
+            <audio id="ciallo" src="../othersource/ciallo.mp3" hidden></audio>
+            <p class="ciallo-text" id="playtext" title="Ciallo～(∠・ω< )⌒☆">Ciallo～(∠・ω< )⌒☆<span class="context_text"><-可以点</span></p>
+       </div>
+    </div>
+
+    <div style="margin-bottom: 100px;"></div>
+
+    <script>
+    //神秘小歌播放器
+        const musicplay = document.getElementById('musicplay');
+        const audio = document.getElementById('audio');
+        const musicname = document.getElementById('musicname');
+
+        musicplay.addEventListener('click', function () {
+            if (audio.paused) {
+                 audio.play();
+                musicname.classList.add('playing');
+                setTimeout(() => {
+                    musicname.textContent = '♫正在播放：フューチャー・イヴ (feat. 初音ミク)--sasakure.UK';
+                    musicname.classList.remove('playing');
+                }, 500);
+            } else {
+                audio.pause();
+                musicname.classList.add('playing');
+                setTimeout(() => {
+                    musicname.textContent = '这里是哪里捏@_@a?   (你写的页面你问我？∑(O_O；))';
+                    audio.currentTime = 0;
+                    musicname.classList.remove('playing');
+                }, 500);
+            }
+        });
+
+        //Ciallo～(∠・ω< )⌒☆
+        const audio1 = document.getElementById("ciallo");
+        const playtext = document.getElementById("playtext");
+        playtext.addEventListener('click',() => {
+            if(audio1.paused){
+                audio1.play();
+            }else{
+                audio1.pause();
+            }
+        });
+    </script>
+</body>
+</html>

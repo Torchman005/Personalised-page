@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神秘</title>
+
+    <link rel="stylesheet" href="../cssStyle/contextCss1.css">
+    <link rel="stylesheet" href="../cssStyle/general.css">
+</head>
+
+<body>
+    <div class="header">
+        <button id="musicplay" title="点击此处播放神秘小歌">♪</button>
+        <audio id="audio" src="../othersource/sasakure.UK.flac"></audio>
+        <span class="header_element"><a href="page.html">回到首页</a></span>
+        <span class="header_element"><a href="#">回到顶部</a></span>
+        <div id="musicname"><a href="">何地方这是？</a></div>
+    </div>
+
+    <div class="context">
+        <div style="font-size: 30px;">  
+            这里有几个小黑盒子，全部都可以交互）<br>
+            <a href="egg/5.html">提示：音频可以同时播放，但请不要让他们变成群魔乱舞好吗）</a>
+        </div>
+    </div>
+
+    <div class="context">
+            <div>
+                <div class="black_box">
+                    <div class="box"></div>
+                    <div class="box_text">
+                        <audio id="ciallo" src="../othersource/ciallo.mp3" hidden></audio>
+                        <p class="clicktext" id="playtext" title="Ciallo～(∠・ω< )⌒☆">Ciallo～(∠・ω< )⌒☆</p>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="box"></div>
+                    <div class="box_text">
+                        <audio id="padoru" src="../othersource/padoru.mp3" hidden></audio>
+                        <p class="clicktext" id="playtext1" title="怕多路">
+                            马上圣诞节了捏，来听每年必看
+                            <br>
+                            <img src="../picture/padoru.jpg" height="120px" width="120px">
+                        </p>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="box"></div>
+                    <div class="box_text">
+                        <audio id="anonmusic" src="../othersource/34669068501-1-30280.mp4" hidden></audio>
+                        <p class="clicktext" id="playtext2" title="嘿嘿嘿嘿嘿哈哈，啊哈哈哈哈哈哈，啊哈哈哈哈哈哈">
+                            唐音献唱！！
+                            <br>
+                            <img src="../picture/anontangbi.jpg" height="120px" width="120px">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="black_box">
+                    <div class="box"></div>
+                    <div class="box_text">
+                        <audio id="jxlkawai" src="../othersource/32922799042-1-30280.mp4" hidden></audio>
+                        <p class="clicktext" id="playtext3" title="这是橘雪莉">
+                            雪莉酱卡哇伊呆suki
+                            <br>
+                            <img src="../picture/cb0381bdf995e4f9aa4e5177bb40416c.jpg" height="120px" width="150px">
+                        </p>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="box"></div>
+                    <div class="box_text">
+                        <a href="https://www.bilibili.com/video/BV1GJ411x7h7?t=12.9" target="_blank">
+                            点击这里v你50
+                        </a>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="box"></div>
+                    <div class="box_text">
+                        <audio id="anon" src="../othersource/tangxiao.mp3" hidden></audio>
+                        <p class="clicktext" id="playtext4" title="唐音">
+                            爱音唐笑来了
+                            <br>
+                            <img src="../picture/72537a813ddcdc43e6e4782a24e52a7d.jpg" height="120px" width="120px">
+                        <p>不是这音频最后什么玩意</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="black_box">
+                    <div class="box"></div>
+                    <div class="box_text">
+                        <a href="https://www.bilibili.com/video/BV1AD4y1k7R6?t=4.1" target="_blank">
+                            点击这里听好听的歌（真的）
+                        </a>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="box"></div>
+                    <div class="box_text">
+                        <a href="egg/4.html" target="_blank">
+                            点击这里观看神秘舞蹈
+                        </a>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <div class="box"></div>
+                    <div class="box_text">
+                        <p><a href="https://www.bilibili.com/video/av914573114?t=4.4" target="_blank">点我看MyGO!!!!!</a></p>
+                        <p><a href="https://www.bilibili.com/video/av113740078909891?t=6.3" target="_blank">点我看AveMujica</a></p>
+                        <p><a href="https://www.bilibili.com/video/BV1WYYwz5EiP?t=3.6" target="_blank">点我看谱面确认（？）</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <script>
+        //神秘小歌播放器
+        const musicplay = document.getElementById('musicplay');
+        const audio = document.getElementById('audio');
+        const musicname = document.getElementById('musicname');
+
+        musicplay.addEventListener('click', function () {
+            if (audio.paused) {
+                audio.play();
+                musicname.classList.add('playing');
+                setTimeout(() => {
+                    musicname.textContent = '♫正在播放：フューチャー・イヴ (feat. 初音ミク)--sasakure.UK';
+                    musicname.classList.remove('playing');
+                }, 500);
+            } else {
+                audio.pause();
+                musicname.classList.add('playing');
+                setTimeout(() => {
+                    musicname.textContent = '盒地方这是';
+                    audio.currentTime = 0;
+                    musicname.classList.remove('playing');
+                }, 500);
+            }
+        });
+        //Ciallo～(∠・ω< )⌒☆
+        const audio1 = document.getElementById("ciallo");
+        const playtext = document.getElementById("playtext");
+        playtext.addEventListener('click', () => {
+            if (audio1.paused) {
+                audio1.play();
+            } else {
+                audio1.pause();
+            }
+        });
+
+        //padoru
+        const audio2 = document.getElementById("padoru");
+        const playtext1 = document.getElementById("playtext1");
+        playtext1.addEventListener('click', () => {
+            if (audio2.paused) {
+                    audio2.play();
+            } else {
+                    audio2.pause();
+            }
+        });
+
+        //唐音献唱！
+            const audio3 = document.getElementById("anonmusic");
+            const playtext2 = document.getElementById("playtext2");
+            playtext2.addEventListener('click', () => {
+                if (audio3.paused) {
+                    audio3.play();
+                } else {
+                    audio3.pause();
+                }
+            });
+
+        //雪莉酱卡哇伊呆suki
+            const audio4 = document.getElementById("jxlkawai");
+            const playtext3 = document.getElementById("playtext3");
+            playtext3.addEventListener('click', () => {
+                if (audio4.paused) {
+                    audio4.play();
+                } else {
+                    audio4.pause();
+                }
+            });
+
+        //爱音唐笑！
+            const audio5 = document.getElementById("anon");
+            const playtext4 = document.getElementById("playtext4");
+            playtext4.addEventListener('click', () => {
+                if (audio5.paused) {
+                    audio5.play();
+                } else {
+                    audio5.pause();
+                }
+            });
+    </script>
+</body>
+
+</html>

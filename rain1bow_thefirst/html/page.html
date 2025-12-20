@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我是谁，我在哪？</title>
+</head>
+
+<link rel="stylesheet" href="../cssStyle/pageCss.css">
+<link rel="stylesheet" href="../cssStyle/general.css">
+<body>
+
+    <!-- 顶部快捷栏 -->
+    <div class="header">
+        <button id="musicplay" title="点击此处播放神秘小歌">♪</button>
+        <audio id="audio" src="../othersource/sasakure.UK.flac"></audio>
+        <span class="header_element"><a href="#contextid">内容</a></span>
+        <span class="header_element"><a href="#aboutid">关于</a></span>
+        <div id="musicname">欢迎回来！！（⌒▽⌒）</div>
+    </div>
+    
+    <!-- 顶部 -->
+    <div class="top">
+        <b>这里是<br>rain1bow的<br>神秘小页面（￣▽￣）</b>
+        <div class="top_element1">
+            <span class="top_element1in">
+                <img class="top_element_picture" src="../picture/head.jpg" alt="糟糕，图片不见了QAQ" title="初音未来"></img>
+            </span>
+            <span class="top_element1_context">Rain1bow^v^</span>
+        </div>
+    </div>
+
+    <!-- 侧栏 -->
+    <div class="sidebar-container">
+        <div class="sidebar" id="targetSidebar">
+            <ul class="sidebar_element">
+                <li>
+                    <a class="sidebar_element_context" href="#contextid"><b>内容</b></a>
+                    <ul>
+                        <li><a class="sidebar_element_contextIn" href="context.html">个人简介</a></li>
+                        <li><a class="sidebar_element_contextIn" href="context1.html">神奇小页面</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar_element_context" href="#aboutid"><b>关于</b></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 内容 -->
+    <div style="padding: 18px;"></div>
+    <div class="context">
+        <h1 id="contextid">·—·内容·—·</h1>
+        <hr>
+        <a href="context.html">
+            <h2>·个人简介·</h2>
+            <p class="context_text">这里是Rain1bow的个人简介！关于这byd的到底有什么大家不知道的秘密呢？
+            <br>哈！点进去想知道一切就全都不是问题啦！
+            <br>
+            <br>（为了显示正常一些，在食用前请务必保持浏览器的窗口占满整个屏幕（包括此页））
+        </p>
+        </a>
+        <hr>
+        <a href="context1.html">
+            <h2>·神奇小页面·</h2>
+            <p class="context_text">这里塞了一些明着做的小彩蛋，其实就是单纯想做（）
+                <br>那么到底塞了些什么小东西呢）真期待呢））哈哈...
+                <br>里面有一大堆以盒子形式的神奇小互动，完全就是因为没什么灵感了才这么弄的...
+
+            </p>
+        </a>
+    </div>
+        
+    <div style="margin-top: 30px;"></div>
+    <!-- 关于 -->
+    <div class="about">
+    <a href="about.html">
+        <h1 id="aboutid">·—·关于·—·</h1>
+            <p class="context_text">神经病一样的把关于页也单独做了...省主页空间可不是这么个省法啊！！！
+                <br>这里是关于这个神秘小页面的一些我个人的话，有对这个小页面的一些解释，当然，还有这个小页面源文件的下载链接。
+                <br>下面一大块空白是用来测试侧栏的。
+            </p>
+    </a>
+    </div>
+
+
+
+
+
+    <script>
+        // 这段侧栏固定是找b站资源和AI实现的
+        const sidebar = document.getElementById('targetSidebar');
+        const sidebarOffsetTop = sidebar.getBoundingClientRect().top + window.scrollY;
+
+        function handleScroll(){
+            const scrollY = window.scrollY;
+            // 滚动距离>=侧栏初始顶部距离
+            if (scrollY >= sidebarOffsetTop-240){
+                sidebar.classList.add('sticky');
+            }else{
+                sidebar.classList.remove('sticky');
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            requestAnimationFrame(handleScroll);
+        },{ passive: true});
+
+
+        window.addEventListener('load', handleScroll);
+        //
+        //
+        //神秘小歌播放器
+        const musicplay = document.getElementById('musicplay');
+        const audio = document.getElementById('audio');
+        const musicname = document.getElementById('musicname');
+        
+        musicplay.addEventListener('click',function(){
+            if(audio.paused){
+                audio.play();
+                musicname.classList.add('playing');
+                setTimeout(()=>{
+                    musicname.textContent = '♫正在播放：フューチャー・イヴ (feat. 初音ミク)--sasakure.UK';
+                    musicname.classList.remove('playing');
+                }, 500);
+            }else{
+                audio.pause();
+                musicname.classList.add('playing');
+                setTimeout(() => {
+                    musicname.textContent = '欢迎回来！！（⌒▽⌒）';
+                    audio.currentTime = 0;
+                    musicname.classList.remove('playing');
+                }, 500);
+            }
+        });
+    </script>
+
+    <div style="margin-bottom: 2000px;"></div>
+</body>
+
+</html>
