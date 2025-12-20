@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Ma Shan Zheng", "PingFang SC", "Microsoft YaHei",
+          sans-serif;
+      }
+      body {
+        background-image: url("huoying.jpg"),
+          radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 107, 0, 0.08) 0%,
+            transparent 20%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(142, 0, 0, 0.08) 0%,
+            transparent 20%
+          );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.08);
+        max-width: 80vmin;
+        margin: 0 auto;
+        padding: 4vmin;
+        border-radius: 2vmin;
+        box-shadow: 0 2vmin 5vmin rgba(142, 0, 0, 0.15);
+        border: 1px solid rgba(255, 107, 0, 0.1);
+      }
+      .title {
+        font-size: 3.5vmin;
+        color: #ff6b00;
+        text-align: center;
+        margin-bottom: 3vmin;
+        text-shadow: 0 0 8px rgba(142, 0, 0, 0.2);
+      }
+      .section {
+        margin-bottom: 3vmin;
+        padding-left: 2vmin;
+        border-left: 0.3vmin solid #8e0000;
+      }
+      .section-title {
+        font-size: 2.2vmin;
+        color: #8e0000;
+        margin-bottom: 1.5vmin;
+        font-weight: 600;
+      }
+      .content {
+        font-size: 1.8vmin;
+        color: #2a2a2a;
+        line-height: 1.8;
+      }
+      .tag {
+        display: inline-block;
+        background: rgba(255, 107, 0, 0.1);
+        border: 1px solid #ff6b00;
+        padding: 0.8vmin 1.5vmin;
+        border-radius: 999px;
+        margin: 0.5vmin;
+        font-size: 1.4vmin;
+        color: #8e0000;
+        transition: all 0.3s ease;
+      }
+      .tag:hover {
+        background: #ff6b00;
+        color: #ffffff;
+        transform: translateY(-0.2vmin);
+      }
+      .footer {
+        margin-top: 4vmin;
+        padding-top: 2vmin;
+        border-top: 1px solid #ff6b00;
+        text-align: center;
+        color: #8e0000;
+        font-size: 1.4vmin;
+        text-shadow: 0 0 4px rgba(255, 107, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1 class="title">About-me</h1>
+      <div class="section">
+        <h2 class="section-title">基本情况</h2>
+        <div class="content">
+          目前是软件工程专业大一学生，梦想成为全栈大手子，特别喜欢机器人。
+        </div>
+      </div>
+      <div class="section">
+        <h2 class="section-title">个人长相</h2>
+        <div class="content">
+          <div
+            style="
+              display: flex;
+              gap: 2vmin;
+              flex-wrap: wrap;
+              margin: 1.5vmin 0;
+            "
+          >
+            <div style="flex: 1; min-width: 150px">
+              <div style="margin-bottom: 1vmin; color: #2a2a2a">我的长相</div>
+              <img
+                src="R-C.jpg"
+                alt="帅哥"
+                title="瞅什么瞅，没见过帅哥吗"
+                style="
+                  width: 100%;
+                  border-radius: 1vmin;
+                  box-shadow: 0 0.5vmin 1vmin rgba(142, 0, 0, 0.1);
+                "
+              />
+            </div>
+            <div style="flex: 1; min-width: 150px">
+              <div style="margin-bottom: 1vmin; color: #2a2a2a">
+                如果你不满意，这个也可以是我
+              </div>
+              <img
+                src="R.jpg"
+                alt="我是大帅哥"
+                title="我是大帅哥，我知道"
+                style="
+                  width: 100%;
+                  border-radius: 1vmin;
+                  box-shadow: 0 0.5vmin 1vmin rgba(142, 0, 0, 0.1);
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2 class="section-title">兴趣爱好</h2>
+        <div class="content">
+          喜欢看火影，看小说，看的很杂，基本都看，玄幻为主。<br />
+          玩第五人格，超级喜欢机器人，喜欢打代码（其实不是，太枯燥了）
+        </div>
+        <div style="margin-top: 2vmin">
+          <span class="tag">火影忍者</span>
+          <span class="tag">第五人格</span>
+          <span class="tag">机器人技术</span>
+          <span class="tag">编程开发</span>
+        </div>
+      </div>
+      <div class="section">
+        <h2 class="section-title">未来规划</h2>
+        <div class="content">
+          希望能成为一名厉害的程序员，参与一些有趣的项目，提升自己的技术水平，同时也希望能多多了解机器人相关的知识，争取在大学期间参加一些机器人竞赛。
+        </div>
+      </div>
+      <div class="footer">手握日月摘星辰，世间无我这般人</div>
+    </div>
+  </body>
+</html>
